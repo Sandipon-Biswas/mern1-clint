@@ -1,0 +1,46 @@
+/* .logo {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #da2f2f 20%,
+    #00aeff 46%,
+    #bcda18 100%
+  );
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 30px;
+} */
+
+.neon_text {
+  font-size: 30px;
+  font-weight: 900;
+
+  background: linear-gradient(
+      to right,
+      rgba(255, 215, 255, 0) 0%,
+      rgba(225, 255, 255, 0.5) 40%,
+      rgba(255, 255, 255, 0) 61%
+    ),
+    linear-gradient(
+      rgb(110, 167, 88) 52%,
+      rgb(255, 230, 224) 60%,
+      rgb(78, 99, 132) 61%
+    );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 200ms ease;
+  animation: ocean 3000ms ease alternate infinite;
+}
+
+@keyframes ocean {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50vw 10px;
+  }
+}

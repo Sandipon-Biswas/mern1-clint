@@ -1,0 +1,18 @@
+
+  .activeStyle {
+    color: red !important;
+    margin: 0 1rem;
+    border: none;
+    text-decoration: none;
+  }
+  .inactive {
+    text-decoration: none;
+    color: white;
+    margin: 0 1rem;
+  }
+  .inactive:hover {
+    color: red !important;
+    margin: 0 1rem;
+    border: none;
+    text-decoration: none;
+  }
