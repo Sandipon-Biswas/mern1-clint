@@ -45,7 +45,7 @@ const About =  () => {
                 <div className="container py-4">
                     <form method="GET" >
                         <div className="row p-4 bg-dark text-light">
-                            <div className="col-md-4"> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh8A7zzxSUVQvG3kzvxPkiQraoiUhboIC9KahJo_wmKOpGat6LruRmLg-ALv_V8raD8SU6BEue9Mr2HkF4PORJu1JR85760L4fVYkN73Q8Vua1tO_4i7e2X73U6Y_tpGeJKEG_yEvaF86KY0D66xZ_SnKY4HSiAlPONnYH9jqwqE73Ksc5La-HOmg/s2048/293637168_1145472176016172_6478110558490144243_n.jpg" alt=""/> </div>
+                            <div className="col-md-4"> <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt=""/> </div>
                             <div className="col-md-6">
                                 <div className="profile_head">
                                     <h4>{data.name}</h4>
