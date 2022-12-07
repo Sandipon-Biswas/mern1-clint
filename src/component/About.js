@@ -5,29 +5,23 @@ import Tabs from 'react-bootstrap/Tabs';
 import { useNavigate } from 'react-router';
 
 import axios from 'axios';
+import { apiurl } from '../config/api';
 const About =  () => {
     let navigate  = useNavigate();
     const [data, setdata] = useState({});
     const callAllpage = async () => {
-        axios.get('/about')
+        let token = JSON.parse(localStorage.getItem("token"))
+        console.log(token);
+        axios.get( apiurl + '/about',{
+            headers: { "Authorization": `Bearer ${token}` }
+        })
         .then(about => setdata(about.data))
         .catch(e => console.log(e))
+
         try{
-            const res = await axios.get("/about");
-    
-            // const res = await fetch('/about', {           //this res is backend response , not from call back function
-            //     method: "GET",
-            //     // headers: {
-            //     //     Accept: "application/json",
-            //     //     "Content-Type": "application/json"
-            //     // },
-            //     // credentials: "include"
-            // });
-            // const data =  await res.json();
-            
-            // console.log(data)
-            if(!res.status === 200){
-                const error = new Error(res.error);
+
+            if(!token){
+                const error = new Error("eror");
                 throw error;
                 
             }            
@@ -35,7 +29,7 @@ const About =  () => {
         }
         catch(err){
             console.log(err.message)
-            navigate('/login');
+             navigate('/login');
         }
     };
     

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Layout from './Layout'
 import axios from 'axios';
+import { apiurl } from '../config/api';
 
 
 const Home = () => {
@@ -9,11 +10,15 @@ const Home = () => {
     const [data, setdata] = useState({});
     const [login, setlogin] = useState("Happy to see you back")
 
+
     const callAllpage = async () => {
+        let token = JSON.parse(localStorage.getItem("token"))
         try {
-            axios.get('/homeandcontact')
+            axios.get( apiurl + '/homeandcontact',{
+                headers: { "Authorization": `Bearer ${token}` }
+            })
             .then(about => setdata(about.data))
-            .catch(e => setlogin("we are the mearn developer"))
+            .catch(e => console.log(e) )
 
 
             

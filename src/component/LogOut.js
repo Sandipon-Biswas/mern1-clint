@@ -1,12 +1,14 @@
 import React, { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router';
 import { UserContext } from '../App';
+import { apiurl } from '../config/api';
 const LogOut = () => {
     let navigate  = useNavigate();
     const {state,dispatch} = useContext(UserContext);
     
     useEffect(()=>{
-        fetch("/logout",{
+        localStorage.clear();
+        fetch (apiurl + "/logout",{
             method:"GET",
             headers:{
                 "Content-Type":"application/json"

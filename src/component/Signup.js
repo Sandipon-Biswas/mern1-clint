@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import Layout from './Layout';
 import Logo from './Logo';
 import { NavLink} from 'react-router-dom';
+import { apiurl } from '../config/api';
 
 
 const Signup = () => {
@@ -28,7 +29,7 @@ const Signup = () => {
         e.preventDefault();
         const {name,email,phone,work,password,cpassword}=user;
 
-        const res = await fetch("/register",{
+        const res = await fetch(apiurl + "/register",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

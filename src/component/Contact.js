@@ -6,6 +6,7 @@ import { IoMdLocate } from 'react-icons/io';
 import ContactTopCard from './smallComponent/ContactTopCard';
 import axios from 'axios';
 import { useNavigate } from 'react-router';
+import { apiurl } from '../config/api';
 const Contact = () => {
 const [name, setname] = useState("")
 const [email, setemail] = useState("")
@@ -17,7 +18,7 @@ const handleForm = async (e) => {
     e.preventDefault();
 
 
-    const res = await fetch("/contact",{
+    const res = await fetch( apiurl + "/contact",{
         method:"POST",
         headers:{
             "Content-Type":"application/json"

@@ -6,6 +6,7 @@ import Layout from './Layout';
 import Logo from './Logo';
 import { NavLink } from 'react-router-dom';
 import { UserContext } from '../App';
+import { apiurl } from '../config/api';
 
 const Login = () => {
     const {state,dispatch} = useContext(UserContext);
@@ -16,7 +17,7 @@ const Login = () => {
         e.preventDefault();
 
 
-        const res = await fetch("/signin",{
+        const res = await fetch(apiurl + "/signin",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -26,12 +27,14 @@ const Login = () => {
             })
         });
         const data = await res.json();
+        console.log(data);
         if(res.status===400 || !data){
             window.alert("wrong");
             console.log("worng");
         }else{  
             dispatch({type:"USER",payload:true})   
             window.alert("success") 
+            localStorage.setItem("token", JSON.stringify(data.token) )
             navigate("/");
         }
     };
